@@ -59,7 +59,7 @@ class SecondView extends StatelessWidget {
               TextField(
                 controller: diaryTwoTextEditingController,
                 decoration: const InputDecoration(
-                  labelText: 'Pasted text will appear here',
+                  labelText: 'Pasted text will appear below',
                   border: OutlineInputBorder(),
                 ),
               ),
@@ -68,11 +68,6 @@ class SecondView extends StatelessWidget {
                   Clipboard.getData('text/plain').then(
                     (value) {
                       diaryTwoTextEditingController.text = value!.text!;
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Text Pasted'),
-                        ),
-                      );
                     },
                   );
                 },

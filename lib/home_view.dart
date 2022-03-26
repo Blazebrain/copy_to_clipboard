@@ -1,4 +1,5 @@
 import 'package:clipboard/clipboard.dart';
+import 'package:copy_to_clipboard/second_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -24,7 +25,7 @@ class HomeView extends StatelessWidget {
             children: [
               const SizedBox(height: 30),
               const Text(
-                'Implementing Copy-To-Clipboard With Dependencies: Clippy',
+                'Implementing Copy-To-Clipboard With Dependencies: Clipboard Package',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20),
               ),
@@ -51,7 +52,7 @@ class HomeView extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               const Text(
-                'Copied text would appear here',
+                'Pasted text would appear below',
                 style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 24),
@@ -83,7 +84,7 @@ class HomeView extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomeView(),
+                      builder: (context) => const SecondView(),
                     ),
                   );
                 },
