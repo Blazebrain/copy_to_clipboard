@@ -39,7 +39,16 @@ class HomeView extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-                  FlutterClipboard.copy(diaryControllerWithPackageOne.text);
+                  FlutterClipboard.copy(diaryControllerWithPackageOne.text)
+                      .then(
+                    (value) {
+                      return ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Text Copied'),
+                        ),
+                      );
+                    },
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor:

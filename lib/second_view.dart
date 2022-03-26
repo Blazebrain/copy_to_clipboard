@@ -39,7 +39,16 @@ class SecondView extends StatelessWidget {
               TextButton(
                 onPressed: () async {
                   Clipboard.setData(
-                      ClipboardData(text: diaryTextEditingController.text));
+                          ClipboardData(text: diaryTextEditingController.text))
+                      .then(
+                    (value) {
+                      return ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Text Copied'),
+                        ),
+                      );
+                    },
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor:
